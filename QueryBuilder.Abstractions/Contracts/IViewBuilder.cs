@@ -10,6 +10,5 @@ public interface IViewBuilder
     IViewBuilder OuterJoin(Action<IJoinBuilder> joinBuilder);
     
     IViewBuilder Table(IView table);
-    IViewBuilder View(IView view);
     IView Build();
 }

@@ -1,5 +1,4 @@
 using QueryBuilder.Abstractions.Contracts;
-using QueryBuilder.Abstractions.Contracts.Builders;
 using QueryBuilder.Abstractions.Contracts.Models;
 using QueryBuilder.Abstractions.Wheres;
 
@@ -8,33 +7,43 @@ namespace QueryBuilder.Abstractions.Joins.Builders;
 public interface IJoinBuilder
 {
     IJoinBuilder With(IView view);
-    
-    IJoinBuilder On(Action<IOnBuilder> where);
+
+    IJoinBuilder OnEquals(string left, string right);
+    IJoin buildInnerJoin();
 }
 
-public interface IOnBuilder
+
+public class JoinBuilder : IJoinBuilder
 {
-    IOnBuilder Equal(string columnName, string anotherColumnName);
-    
-    
-    IOnBuilder NotEqual(string columnName, string anotherColumnName);
-    
-    
-    IOnBuilder Bigger(string columnName, string anotherColumnName);
-    
-    
-    IOnBuilder BiggerOrEqual(string columnName, string anotherColumnName);
+    private IView _view;
+    private string _left;
+    private string _right;
+    public IJoinBuilder With(IView view)
+    {
+        _view = view;
+        return this;
+    }
 
+    public IJoinBuilder OnEquals(string left, string right)
+    {
+        _left = left;
+        _right = right;
+        return this;
+    }
 
+    public IJoin buildInnerJoin()
+    {
+        return new InnerJoin(_view,_left,_right);
+    }
 
+    public IJoin buildOuterJoin()
+    {
+        throw new NotImplementedException();
+        // return new OuterJoin(_view,_left,_right);
+    }
 
-    
-    IOnBuilder Smaller(string columnName, string anotherColumnName);
-   
-    IOnBuilder SmallerOrEqual(string columnName, string anotherColumnName);
-  
-
-    
-    IOnBuilder Like(string columnName, string anotherColumnName);
-
+    public IJoin buildLeftJoin()
+    {
+        return new LeftJoin(_view,_left,_right);
+    }
 }

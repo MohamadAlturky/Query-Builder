@@ -1,11 +1,17 @@
+using QueryBuilder.Abstractions.Contracts;
+
 namespace QueryBuilder.Abstractions.Joins;
 
-public class InnerJoin(string table, string leftKey, string rightKey) : IJoin
+public class InnerJoin(IView view, string leftKey, string rightKey) : IJoin
 {
-    public string Table { get; } = table;
+    public IView View { get; } = view;
     public string LeftKey { get; } = leftKey;
     public string RightKey { get; } = rightKey;
     public JoinType Type => JoinType.Inner;
+    public override string ToString()
+    {
+        return $"Inner Join {View.Clause} on {LeftKey} = {RightKey}";
+    }
 
-    public void DisplayJoinInfo() => Console.WriteLine($"Inner Join on {Table} using {LeftKey} = {RightKey}");
+    public void DisplayJoinInfo() => Console.WriteLine($"\n Inner Join {View.Clause} on {LeftKey} = {RightKey}");
 }

@@ -1,8 +1,8 @@
 using QueryBuilder.Abstractions.Contracts;
 using QueryBuilder.Abstractions.Contracts.Models;
-using QueryBuilder.Abstractions.Models;
+using QueryBuilder.Abstractions.Database;
 
-namespace QueryBuilder.Abstractions.Database;
+namespace QueryBuilder.Abstractions.Models;
 
 public class Db : IDb
 {

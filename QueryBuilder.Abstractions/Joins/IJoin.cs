@@ -1,8 +1,10 @@
+using QueryBuilder.Abstractions.Contracts;
+
 namespace QueryBuilder.Abstractions.Joins;
 
 public interface IJoin
 {
-    string Table { get; }
+    IView View { get; }
     string LeftKey { get; }
     string RightKey { get; }
     JoinType Type { get; }
