@@ -1,24 +1,22 @@
-using QueryBuilder.Abstractions.Contracts.Builders;
-using QueryBuilder.Abstractions.Contracts.Models;
+using QueryBuilder.Abstractions.Contracts;
 using QueryBuilder.Abstractions.Joins;
 using QueryBuilder.Abstractions.Joins.Builders;
-using QueryBuilder.Abstractions.Models;
 
-namespace QueryBuilder.Abstractions.Queryables;
+namespace QueryBuilder.Abstractions.Models;
 
-public class QueryableViewBuilder : IQueryableViewBuilder
+public class ViewBuilder : IViewBuilder
 {
     private readonly List<IJoin> _joins = new();
 
     // 4a. Method to add an Inner Join
-    public QueryableViewBuilder AddInnerJoin(string table, string leftKey, string rightKey)
+    public ViewBuilder AddInnerJoin(string table, string leftKey, string rightKey)
     {
         _joins.Add(new InnerJoin(table, leftKey, rightKey));
         return this;
     }
 
     // 4b. Method to add a Left Join
-    public QueryableViewBuilder AddLeftJoin(string table, string leftKey, string rightKey)
+    public ViewBuilder AddLeftJoin(string table, string leftKey, string rightKey)
     {
         _joins.Add(new LeftJoin(table, leftKey, rightKey));
         return this;
@@ -26,47 +24,47 @@ public class QueryableViewBuilder : IQueryableViewBuilder
 
     // 4c. Build method to retrieve the configured joins
     //public List<IJoin> Build() => _joins;
-    public IQueryableViewBuilder InnerJoin(IJoinBuilder joinBuilder)
+    public IViewBuilder InnerJoin(IJoinBuilder joinBuilder)
     {
         throw new NotImplementedException();
     }
 
-    public IQueryableViewBuilder LeftJoin(IJoinBuilder joinBuilder)
+    public IViewBuilder LeftJoin(IJoinBuilder joinBuilder)
     {
         throw new NotImplementedException();
     }
 
-    public IQueryableViewBuilder OuterJoin(IJoinBuilder joinBuilder)
+    public IViewBuilder OuterJoin(IJoinBuilder joinBuilder)
     {
         throw new NotImplementedException();
     }
 
-    public IQueryableViewBuilder InnerJoin(Action<IJoinBuilder> joinBuilder)
+    public IViewBuilder InnerJoin(Action<IJoinBuilder> joinBuilder)
     {
         throw new NotImplementedException();
     }
 
-    public IQueryableViewBuilder LeftJoin(Action<IJoinBuilder> joinBuilder)
+    public IViewBuilder LeftJoin(Action<IJoinBuilder> joinBuilder)
     {
         throw new NotImplementedException();
     }
 
-    public IQueryableViewBuilder OuterJoin(Action<IJoinBuilder> joinBuilder)
+    public IViewBuilder OuterJoin(Action<IJoinBuilder> joinBuilder)
     {
         throw new NotImplementedException();
     }
 
-    public IQueryableViewBuilder Table(IQueryableView table)
+    public IViewBuilder Table(IView table)
     {
         throw new NotImplementedException();
     }
 
-    public IQueryableViewBuilder View(IQueryableView view)
+    public IViewBuilder View(IView view)
     {
         throw new NotImplementedException();
     }
 
-    public IQueryableView Build()
+    public IView Build()
     {
         throw new NotImplementedException();
     }

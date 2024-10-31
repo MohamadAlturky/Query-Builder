@@ -1,4 +1,5 @@
 using QueryBuilder.Abstractions.Contracts.Builders;
+using QueryBuilder.Abstractions.Wheres;
 
 namespace QueryBuilder.Abstractions.Contracts.Models;
 

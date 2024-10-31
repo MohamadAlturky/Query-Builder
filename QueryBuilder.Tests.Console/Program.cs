@@ -1,22 +1,21 @@
 ﻿using QueryBuilder.Abstractions;
+using QueryBuilder.Abstractions.Contracts;
 using QueryBuilder.Abstractions.Contracts.Builders;
 using QueryBuilder.Abstractions.Database;
 using QueryBuilder.Abstractions.Models;
-using QueryBuilder.Abstractions.Queryables;
 
 var db = new Db();
-Table party = new Table("Party");
-Table role = new Table("role");
-IQueryableViewBuilder viewBuilder = new QueryableViewBuilder();
+var party = new Table("Party");
+var role = new Table("role");
+IViewBuilder viewBuilder = new ViewBuilder();
 var joined = viewBuilder
     .Table(party)
-    .View(party)
-    .OuterJoin(builder =>
+    .InnerJoin(builder =>
     {
         builder.With(party);
-        builder.Where(where =>
+        builder.On(where =>
         {
-            where.Equal("Id",1);
+            where.Equal("Id","sad");
             where.Like("Name", "s");
         });
     }).Build();  
