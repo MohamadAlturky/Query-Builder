@@ -1,4 +1,7 @@
-using QueryBuilder.Abstractions.Builders;
+using QueryBuilder.Abstractions.Contracts.Builders;
+using QueryBuilder.Abstractions.Contracts.Models;
+using QueryBuilder.Abstractions.Joins;
+using QueryBuilder.Abstractions.Joins.Builders;
 using QueryBuilder.Abstractions.Models;
 
 namespace QueryBuilder.Abstractions.Queryables;
@@ -22,7 +25,7 @@ public class QueryableViewBuilder : IQueryableViewBuilder
     }
 
     // 4c. Build method to retrieve the configured joins
-    public List<IJoin> Build() => _joins;
+    //public List<IJoin> Build() => _joins;
     public IQueryableViewBuilder InnerJoin(IJoinBuilder joinBuilder)
     {
         throw new NotImplementedException();
@@ -59,6 +62,11 @@ public class QueryableViewBuilder : IQueryableViewBuilder
     }
 
     public IQueryableViewBuilder View(IQueryableView view)
+    {
+        throw new NotImplementedException();
+    }
+
+    public IQueryableView Build()
     {
         throw new NotImplementedException();
     }

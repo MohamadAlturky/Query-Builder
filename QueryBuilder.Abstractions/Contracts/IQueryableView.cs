@@ -1,4 +1,4 @@
-namespace QueryBuilder.Abstractions.Models;
+namespace QueryBuilder.Abstractions.Contracts.Models;
 
 public interface IQueryableView
 {

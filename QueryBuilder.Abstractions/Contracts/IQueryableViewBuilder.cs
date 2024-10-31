@@ -1,6 +1,8 @@
+using QueryBuilder.Abstractions.Contracts.Models;
+using QueryBuilder.Abstractions.Joins.Builders;
 using QueryBuilder.Abstractions.Models;
 
-namespace QueryBuilder.Abstractions.Builders;
+namespace QueryBuilder.Abstractions.Contracts.Builders;
 
 public interface IQueryableViewBuilder
 {
@@ -10,4 +12,5 @@ public interface IQueryableViewBuilder
     
     IQueryableViewBuilder Table(IQueryableView table);
     IQueryableViewBuilder View(IQueryableView view);
+    IQueryableView Build();
 }

@@ -1,4 +1,4 @@
-namespace QueryBuilder.Abstractions.Queryables;
+namespace QueryBuilder.Abstractions.Joins;
 
 public class InnerJoin(string table, string leftKey, string rightKey) : IJoin
 {

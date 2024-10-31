@@ -1,4 +1,4 @@
-namespace QueryBuilder.Abstractions.Builders;
+namespace QueryBuilder.Abstractions.Contracts.Builders;
 
 public interface IOrderByBuilder
 {

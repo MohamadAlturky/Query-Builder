@@ -1,4 +1,4 @@
-namespace QueryBuilder.Abstractions.Queryables;
+namespace QueryBuilder.Abstractions.Joins;
 
 public enum JoinType
 {
