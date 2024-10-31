@@ -10,7 +10,7 @@ public class LeftJoin(IView view, string leftKey, string rightKey) : IJoin
     public JoinType Type => JoinType.Left;
     public override string ToString()
     {
-        return $"Left Join {View.Clause} on {LeftKey} = {RightKey}";
+        return $"\n Left Join {View.Clause} \n    on {LeftKey} = {RightKey}";
     }
 
     public void DisplayJoinInfo() => Console.WriteLine($"\n Left Join {View.Clause} on {LeftKey} = {RightKey}");

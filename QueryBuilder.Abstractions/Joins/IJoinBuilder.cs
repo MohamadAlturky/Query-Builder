@@ -9,7 +9,10 @@ public interface IJoinBuilder
     IJoinBuilder With(IView view);
 
     IJoinBuilder OnEquals(string left, string right);
-    IJoin buildInnerJoin();
+    IJoin BuildInnerJoin();
+    IJoin BuildLeftJoin();
+    IJoin BuildOuterJoin();
+
 }
 
 
@@ -31,18 +34,17 @@ public class JoinBuilder : IJoinBuilder
         return this;
     }
 
-    public IJoin buildInnerJoin()
+    public IJoin BuildInnerJoin()
     {
         return new InnerJoin(_view,_left,_right);
     }
 
-    public IJoin buildOuterJoin()
+    public IJoin BuildOuterJoin()
     {
-        throw new NotImplementedException();
-        // return new OuterJoin(_view,_left,_right);
+        return new OuterJoin(_view,_left,_right);
     }
 
-    public IJoin buildLeftJoin()
+    public IJoin BuildLeftJoin()
     {
         return new LeftJoin(_view,_left,_right);
     }

@@ -14,7 +14,7 @@ public class ViewBuilder : IViewBuilder
     {
         var builder = new JoinBuilder();
         joinBuilder(builder);
-        _joins.Add(builder.buildInnerJoin());
+        _joins.Add(builder.BuildInnerJoin());
         return this;
     }
 
@@ -22,7 +22,7 @@ public class ViewBuilder : IViewBuilder
     {
         var builder = new JoinBuilder();
         joinBuilder(builder);
-        _joins.Add(builder.buildLeftJoin());
+        _joins.Add(builder.BuildLeftJoin());
         return this;
     }
 
@@ -30,7 +30,7 @@ public class ViewBuilder : IViewBuilder
     {
         var builder = new JoinBuilder();
         joinBuilder(builder);
-        _joins.Add(builder.buildOuterJoin());
+        _joins.Add(builder.BuildOuterJoin());
         return this;
     }
 

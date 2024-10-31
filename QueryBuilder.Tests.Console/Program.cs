@@ -9,13 +9,22 @@ var user = new Table("user");
 IViewBuilder viewBuilder = new ViewBuilder();
 var joined = viewBuilder
     .Table(party)
-    .InnerJoin(builder =>
+    .InnerJoin(
+        builder =>
     {
         builder.With(role);
         builder.OnEquals("party.Id","role.user");
-    }).LeftJoin(builder =>
+    })
+    .LeftJoin(
+        builder =>
     {
         builder.With(user).OnEquals("user.party","party.Id");
+    })
+    .OuterJoin(
+        builder =>
+    {
+        builder.With(role);
+        builder.OnEquals("user.Id","role.user");
     })
     .Build();
 
