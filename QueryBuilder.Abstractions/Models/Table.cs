@@ -1,4 +1,4 @@
-namespace QueryBuilder.Abstractions.QueryableViews;
+namespace QueryBuilder.Abstractions.Models;
 
 public class Table(string clause) : IQueryableView
 {

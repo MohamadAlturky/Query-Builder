@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryBuilder.Abstractions",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryBuilder.Tests.Console", "QueryBuilder.Tests.Console\QueryBuilder.Tests.Console.csproj", "{56F3BF5A-27F9-470D-9864-E0C4BDD0488F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryBuilder.Core", "QueryBuilder.Core\QueryBuilder.Core.csproj", "{BAB0E607-6077-42D8-8BCC-01124F937928}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{56F3BF5A-27F9-470D-9864-E0C4BDD0488F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56F3BF5A-27F9-470D-9864-E0C4BDD0488F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56F3BF5A-27F9-470D-9864-E0C4BDD0488F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB0E607-6077-42D8-8BCC-01124F937928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB0E607-6077-42D8-8BCC-01124F937928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB0E607-6077-42D8-8BCC-01124F937928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB0E607-6077-42D8-8BCC-01124F937928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

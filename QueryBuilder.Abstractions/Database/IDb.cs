@@ -1,5 +1,4 @@
 using QueryBuilder.Abstractions.Models;
-using QueryBuilder.Abstractions.QueryableViews;
 
 namespace QueryBuilder.Abstractions.Database;
 

@@ -1,8 +1,8 @@
 ﻿using QueryBuilder.Abstractions;
 using QueryBuilder.Abstractions.Builders;
 using QueryBuilder.Abstractions.Database;
+using QueryBuilder.Abstractions.Models;
 using QueryBuilder.Abstractions.Queryables;
-using QueryBuilder.Abstractions.QueryableViews;
 
 var db = new Db();
 Table party = new Table("Party");
