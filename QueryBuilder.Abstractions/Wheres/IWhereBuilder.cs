@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 namespace QueryBuilder.Abstractions.Wheres;
 
 public interface IWhereBuilder
@@ -51,5 +53,6 @@ public interface IWhereBuilder
     IWhereBuilder Like(string columnName, DateTime parameter);
     IWhereBuilder Like(string columnName, DateOnly parameter);
     IWhereBuilder Like(string columnName, long parameter);
-
+    Dictionary<string, object> GetParameters();
+    string Build();
 }
