@@ -1,5 +1,6 @@
 ﻿using QueryBuilder.Abstractions;
 using QueryBuilder.Abstractions.Builders;
+using QueryBuilder.Abstractions.Database;
 using QueryBuilder.Abstractions.Queryables;
 using QueryBuilder.Abstractions.QueryableViews;
 

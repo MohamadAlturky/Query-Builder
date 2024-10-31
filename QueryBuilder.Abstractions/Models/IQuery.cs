@@ -1,6 +1,6 @@
 using QueryBuilder.Abstractions.Builders;
 
-namespace QueryBuilder.Abstractions;
+namespace QueryBuilder.Abstractions.Models;
 
 public interface IQuery
 {
