@@ -1,18 +1,11 @@
 namespace QueryBuilder.Abstractions.Queryables;
 
-public class LeftJoin : IJoin
+public class LeftJoin(string table, string leftKey, string rightKey) : IJoin
 {
-    public string Table { get; }
-    public string LeftKey { get; }
-    public string RightKey { get; }
+    public string Table { get; } = table;
+    public string LeftKey { get; } = leftKey;
+    public string RightKey { get; } = rightKey;
     public JoinType Type => JoinType.Left;
-
-    public LeftJoin(string table, string leftKey, string rightKey)
-    {
-        Table = table;
-        LeftKey = leftKey;
-        RightKey = rightKey;
-    }
 
     public void DisplayJoinInfo() => Console.WriteLine($"Left Join on {Table} using {LeftKey} = {RightKey}");
 }

@@ -1,22 +1,7 @@
+using QueryBuilder.Abstractions.Builders;
+using QueryBuilder.Abstractions.QueryableViews;
+
 namespace QueryBuilder.Abstractions.Queryables;
-
-
-public interface IQueryableViewBuilder
-{
-    IQueryableViewBuilder InnerJoin(Action<IJoinBuilder> joinBuilder);
-    IQueryableViewBuilder LeftJoin(Action<IJoinBuilder> joinBuilder);
-    IQueryableViewBuilder OuterJoin(Action<IJoinBuilder> joinBuilder);
-    
-    IQueryableViewBuilder Table(IQueryableView table);
-    IQueryableViewBuilder View(IQueryableView view);
-}
-public interface IJoinBuilder
-{
-    IJoinBuilder With(IQueryableView queryableView);
-    
-    IJoinBuilder Where(Action<IWhereBuilder> where);
-}
-
 
 public class QueryableViewBuilder : IQueryableViewBuilder
 {

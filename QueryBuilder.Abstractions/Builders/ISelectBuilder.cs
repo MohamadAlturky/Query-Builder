@@ -1,4 +1,4 @@
-namespace QueryBuilder.Abstractions;
+namespace QueryBuilder.Abstractions.Builders;
 
 public interface ISelectBuilder
 {

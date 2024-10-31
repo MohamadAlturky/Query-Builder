@@ -6,5 +6,5 @@ public interface IJoin
     string LeftKey { get; }
     string RightKey { get; }
     JoinType Type { get; }
-    void DisplayJoinInfo(); // For demonstration purposes
+    void DisplayJoinInfo();
 }
